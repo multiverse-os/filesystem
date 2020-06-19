@@ -1,4 +1,4 @@
-package filesystem
+package path
 
 import (
 	"path/filepath"
@@ -46,4 +46,14 @@ func (self Path) ParentPath() bool {
 	//if 2 =< len(parent_directory) && byte(parent_directory[:1]) == byte("/") {}
 	// NOTE Dir will return "." if there is none.
 	return filepath.Dir(string(self))
+}
+
+// Abs returns name if name is an absolute path. If name is a relative
+// path then an absolute path is constructed by using cwd as the current
+// working directory.
+func Abs(cwd, name string) string {
+	if filepath.IsAbs(name) {
+		return name
+	}
+	return filepath.Join(cwd, name)
 }

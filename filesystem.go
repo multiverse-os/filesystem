@@ -1,11 +1,13 @@
 package filesystem
 
+import "os"
+
 // Non-Atomic
 // fd=open("file", O_TRUNC); write(fd, data); close(fd);
 // Atomic
 // fd=open("file.new"); write(fd, data); close(fd); rename("file.new", "file");
 
-func New(file_type FileType, path string) interface{} {
+func New(file_type os.FileMode, path string) interface{} {
 	switch file_type {
 	case FileType:
 		return *File{

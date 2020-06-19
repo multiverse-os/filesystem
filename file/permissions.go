@@ -1,7 +1,13 @@
-package metadata
+package file
 
 import (
 	"os"
+)
+
+const (
+	R_OK = 0x4
+	W_OK = 0x2
+	X_OK = 0x1
 )
 
 // `int` value, avoiding string comparison

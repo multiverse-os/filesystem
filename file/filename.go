@@ -1,4 +1,4 @@
-package filesystem
+package file
 
 type Filename string
 

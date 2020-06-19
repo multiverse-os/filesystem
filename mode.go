@@ -31,6 +31,11 @@ const (
 	ModePerm os.FileMode = 0777 // Unix permission bits
 )
 
+// Aliasing for simpler API
+const (
+	DirectoryType = ModeDir
+)
+
 func ParseFileMode(input string) (os.FileMode, error) {
 	var mode os.FileMode
 

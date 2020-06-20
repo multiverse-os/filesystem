@@ -1,4 +1,4 @@
-package path
+package filesystem
 
 import (
 	"path/filepath"
@@ -6,8 +6,6 @@ import (
 )
 
 type Path string
-
-var Cusor = Path{"/"}
 
 // TODO: Add validation
 // TODO: Add segmentation

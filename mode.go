@@ -34,6 +34,7 @@ const (
 // Aliasing for simpler API
 const (
 	DirectoryType = ModeDir
+	FileType      = Mode
 )
 
 func ParseFileMode(input string) (os.FileMode, error) {
